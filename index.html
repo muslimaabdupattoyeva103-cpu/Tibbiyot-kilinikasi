@@ -1,63 +1,68 @@
-<h4>Dr. Alisher Karimov</h4>
-        <p>Oliy toifali kardiolog • 15 yillik tajriba</p>
-      </div>
-      <div class="card">
-        <h4>Dr. Malika Rahimova</h4>
-        <p>Nevropatolog • 10 yillik tajriba</p>
-      </div>
-      <div class="card">
-        <h4>Dr. Sardor Usmonov</h4>
-        <p>UZI mutaxassisi • 12 yillik tajriba</p>
-      </div>
-    </div>
-  </section>
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shifo Markaz — tibbiyot klinikasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top">Shifo Markaz</a>
+  <nav aria-label="Asosiy menyu"><a href="#xizmatlar">Xizmatlar</a><a href="#shifokorlar">Shifokorlar</a><a href="#qabul">Qabulga yozilish</a><a href="#mening">Mening qabullarim</a></nav>
+  <a class="btn" href="#qabul">Qabulga yozilish</a>
+</div></header>
 
-  <section id="qabul">
-    <h3 class="section-title">Onlayn qabulga yozilish</h3>
-    <div class="form-box">
-      <form id="bookingForm">
-        <div class="form-group">
-          <label>Ism va familiyangiz</label>
-          <input type="text" id="patientName" placeholder="Masalan: Jasur Toshmatov" required />
-        </div>
-        <div class="form-group">
-          <label>Telefon raqamingiz</label>
-          <input type="tel" id="patientPhone" placeholder="+998 90 123 45 67" required />
-        </div>
-        <div class="form-group">
-          <label>Shifokor / Yo‘nalishni tanlang</label>
-          <select id="doctorSelect">
-            <option value="Kardiolog - Dr. Alisher Karimov">Kardiolog - Dr. Alisher Karimov</option>
-            <option value="Nevropatolog - Dr. Malika Rahimova">Nevropatolog - Dr. Malika Rahimova</option>
-            <option value="UZI - Dr. Sardor Usmonov">UZI - Dr. Sardor Usmonov</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Qabul sanasi</label>
-          <input type="date" id="visitDate" required />
-        </div>
-        <button type="submit" class="btn btn-primary">Tasdiqlash</button>
-      </form>
-      <div class="alert" id="successMsg"></div>
-    </div>
-  </section>
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>Sogʻligʻingiz uchun tajribali shifokorlar</h1>
+    <p>Tashxis, davolash va profilaktika bir joyda. Shifokorni tanlang, qulay vaqtni belgilang — navbatda turish shart emas.</p>
+    <a class="btn" href="#qabul">Qabulga yozilish</a>
+    <a class="btn ghost" href="#shifokorlar" style="margin-left:8px">Shifokorlarni koʻrish</a>
+  </div>
+  <aside class="hours" aria-label="Ish vaqti">
+    <h3>Ish vaqti</h3>
+    <dl><dt>Dushanba – Juma</dt><dd>08:00 – 19:00</dd><dt>Shanba</dt><dd>09:00 – 15:00</dd><dt>Yakshanba</dt><dd>Dam olish kuni</dd></dl>
+    <a class="tel" href="tel:+998712000000">+998 71 200 00 00</a>
+    <span class="meta">Toshkent sh., Amir Temur koʻchasi 100</span>
+  </aside>
+</div></div>
 
-  <footer>
-    <p>© 2026 ShifoMed Tibbiyot Klinikasi. Barcha huquqlar himoyalangan.</p>
-  </footer>
+<section id="xizmatlar"><div class="wrap">
+  <h2>Xizmatlar</h2><p class="sub">Yoʻnalishni tanlang va narxlarni koʻring.</p>
+  <div class="chips" id="svcChips" role="group" aria-label="Xizmat yoʻnalishi"></div>
+  <div class="grid" id="svcGrid"></div>
+</div></section>
 
-  <script>
-    document.getElementById('bookingForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('patientName').value;
-      const doctor = document.getElementById('doctorSelect').value;
-      const date = document.getElementById('visitDate').value;
-      const msg = document.getElementById('successMsg');
-      msg.style.display = 'block';
-      msg.innerText = Rahmat, ${name}! Siz ${date} sanasiga (${doctor}) qabuliga muvaffaqiyatli yozildingiz.;
-      this.reset();
-    });
-  </script>
+<section id="shifokorlar"><div class="wrap">
+  <h2>Shifokorlar</h2><p class="sub">Mutaxassisni tanlab, toʻgʻridan-toʻgʻri qabulga yoziling.</p>
+  <div class="chips" id="docChips" role="group" aria-label="Mutaxassislik"></div>
+  <div class="grid" id="docGrid"></div>
+</div></section>
 
+<section id="qabul"><div class="wrap">
+  <h2>Qabulga yozilish</h2><p class="sub">Shifokor, sana va vaqtni tanlang. Band vaqtlar chizilgan.</p>
+  <div class="book" id="bookForm">
+    <div><label for="fName">Ism-familiya</label><input id="fName" autocomplete="name" placeholder="Masalan, Dilnoza Karimova"></div>
+    <div><label for="fPhone">Telefon raqam</label><input id="fPhone" type="tel" autocomplete="tel" placeholder="+998 90 123 45 67"></div>
+    <div><label for="fDoc">Shifokor</label><select id="fDoc"></select></div>
+    <div><label for="fDate">Sana</label><input id="fDate" type="date"></div>
+    <div class="full"><label id="slotLbl">Vaqt</label><div class="slots" id="slots" role="group" aria-labelledby="slotLbl"></div></div>
+    <div class="full"><button class="btn" id="submitBtn" type="button">Qabulga yozilish</button><div class="msg" id="msg" role="status" aria-live="polite"></div></div>
+  </div>
+</div></section>
+
+<section id="mening"><div class="wrap">
+  <h2>Mening qabullarim</h2><p class="sub">Yozilgan qabullaringiz shu qurilmada saqlanadi.</p>
+  <div id="appts"></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Shifo Markaz. Barcha huquqlar himoyalangan.</span><span>Sayt maʼlumot uchun; shoshilinch holatda 103 ga qoʻngʻiroq qiling.</span></div></footer>
+
+<script src="script.js"></script>
 </body>
 </html>
