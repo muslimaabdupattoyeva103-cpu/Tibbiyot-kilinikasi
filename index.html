@@ -1,0 +1,63 @@
+<h4>Dr. Alisher Karimov</h4>
+        <p>Oliy toifali kardiolog • 15 yillik tajriba</p>
+      </div>
+      <div class="card">
+        <h4>Dr. Malika Rahimova</h4>
+        <p>Nevropatolog • 10 yillik tajriba</p>
+      </div>
+      <div class="card">
+        <h4>Dr. Sardor Usmonov</h4>
+        <p>UZI mutaxassisi • 12 yillik tajriba</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="qabul">
+    <h3 class="section-title">Onlayn qabulga yozilish</h3>
+    <div class="form-box">
+      <form id="bookingForm">
+        <div class="form-group">
+          <label>Ism va familiyangiz</label>
+          <input type="text" id="patientName" placeholder="Masalan: Jasur Toshmatov" required />
+        </div>
+        <div class="form-group">
+          <label>Telefon raqamingiz</label>
+          <input type="tel" id="patientPhone" placeholder="+998 90 123 45 67" required />
+        </div>
+        <div class="form-group">
+          <label>Shifokor / Yo‘nalishni tanlang</label>
+          <select id="doctorSelect">
+            <option value="Kardiolog - Dr. Alisher Karimov">Kardiolog - Dr. Alisher Karimov</option>
+            <option value="Nevropatolog - Dr. Malika Rahimova">Nevropatolog - Dr. Malika Rahimova</option>
+            <option value="UZI - Dr. Sardor Usmonov">UZI - Dr. Sardor Usmonov</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Qabul sanasi</label>
+          <input type="date" id="visitDate" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Tasdiqlash</button>
+      </form>
+      <div class="alert" id="successMsg"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 ShifoMed Tibbiyot Klinikasi. Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('patientName').value;
+      const doctor = document.getElementById('doctorSelect').value;
+      const date = document.getElementById('visitDate').value;
+      const msg = document.getElementById('successMsg');
+      msg.style.display = 'block';
+      msg.innerText = Rahmat, ${name}! Siz ${date} sanasiga (${doctor}) qabuliga muvaffaqiyatli yozildingiz.;
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
